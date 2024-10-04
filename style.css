@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+}
+.navbar{
+    background-color: azure;
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    padding: 5px;
+    justify-content: center;
+}
+.nav-item{
+    color: brown;
+    background-color: beige;
+}
