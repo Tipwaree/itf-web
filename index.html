@@ -3,17 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Responsive Flowershop Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!--- box icon link --->
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!--- box icon link --->
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+
+    <!--- google front link --->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <nav class="navbar">
-        <div>logo</div>
-        <div class="nav-item-container"></div>
-            <div class="nav-item">Home</div>
-            <div class="nav-item">Contact</div>
-            <div class="nav-item">About</div>
+    <!--- header --->
+    <header>
+        <a href="#" class="logo">
+            <img src="img/logo.jpg" style="max-width: 30px; height: auto;">
+        </a>
+        <nav>
+            <ul class="navlist">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    <!-- Add this to the header HTML -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <i class="bx bx-menu"></i>
+    </div>
+
+<script>
+function toggleMenu() {
+    document.querySelector('.navlist').classList.toggle('active');
+}
+</script>
+
+    </header>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Fresh Flowers Delivered to Your Doorstep</h1>
+            <p>Order now and brighten your day with a touch of nature.</p>
+            <botton href="#" class="btn">Shop Now</botton>
         </div>
-    </nav>
+    </section>
+
+    <section class="services">
+        <h2>Our Best Sellers</h2>
+        <div class="service-container">
+            <div class="service-item">
+                <img src="img/bouquet.jpg" alt="Bouquet">
+                <h3>Beautiful Bouquet</h3>
+                <p>$30</p>
+            </div>
+            <div class="service-item">
+                <img src="img/rose .jpg" alt="Rose">
+                <h3>Rose Bundle</h3>
+                <p>$25</p>
+            </div>
+            <div class="service-item">
+                <img src="img/Tulips.jpg" alt="Tulips">
+                <h3>Spring Tulips</h3>
+                <p>$20</p>
+            </div>
+        </div>
+    </section>
 </body>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2024 FlowerShop by Tipwaree | All rights reserved</p>
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100056103964518" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/lemmebeurice_/" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+        </ul>
+    </div>
+</footer>
+
 </html>
