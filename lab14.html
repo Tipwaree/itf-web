@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="https://th.bing.com/th/id/OIP.nBwIfauMfjWd0qbnifW7YgHaHa?rs=1&pid=ImgDetMain">
+    <title>Phonebook</title>
+</head>
+<body>
+    <div class="username"><h1 id="username" ><a href="https://www.instagram.com/lemmebeurice_/" target="_blank">ทิพย์วารี เถาโคตสี 67070056</a></h1></div>
+    <div class="profile">
+        <div class="proflie-pic" id="profile-pic"5>
+            <div class="proflie-num">1</div>
+        </div>
+    </div>
+    <div class="input-username">
+        <label style="display: flex; position: relative; font-size: 1rem; padding: 0; width: 8.5rem; align-items: center;">Set the Username</label>
+        <input type="text" placeholder="Enter Username" id="input_name" style="display: flex; background-color: rgb(239, 239, 239); height: 2rem; width: 20rem; padding: 0.4rem; border: none; border-radius: 8px; color: rgb(72, 71, 71);">
+        <button onclick="setUsername()" style="height: 2rem; width: 4rem; font-size: 0.8rem; display: flex; border-radius: 8px; justify-content: center; align-items: center; color: white; border: none;">SET</button>
+    </div>
+    <div class="input-urlimage">
+        <label style="display: flex; position: relative; font-size: 1rem; padding: 0; width: 13rem; align-items: center;">Set the profile image URL</label>
+        <input type="text" placeholder="Enter Image URL" id="profile-url" style="display: flex; background-color: rgb(239, 239, 239); height: 2rem; width: 20rem; padding: 0.4rem; border: none; border-radius: 8px; color: rgb(72, 71, 71);">
+        <button onclick="setImg()" style="height: 2rem; width: 4rem; font-size: 0.8rem; display: flex; border-radius: 8px; justify-content: center; align-items: center; color: white; border: none;">SET</button>
+    </div>
+    <div class="phone-numberlist">
+        <div class="label-numberlist">
+            <label style="font-weight: bold;">Phone Number List</label>
+        </div>
+        <div class="input-numberlist">
+            <input type="text" placeholder="Name" id="name" style="display: flex; background-color: rgb(239, 239, 239); height: 2rem; width: 20rem; padding: 0.4rem; border: none; border-radius: 8px; color: rgb(72, 71, 71);">
+            <input type="number" placeholder="Tel" id="phone" style="display: flex; background-color: rgb(239, 239, 239); height: 2rem; width: 20rem; padding: 0.4rem; border: none; border-radius: 8px; color: rgb(72, 71, 71);">
+            <button onclick="updateRow()" style="height: 2rem; width: 4rem; font-size: 0.8rem; display: flex; border-radius: 8px; justify-content: center; align-items: center; color: white; border: none;">ADD</button>
+            <button onclick="saveCSV()" style="height: 2rem; width: 6rem; font-size: 0.8rem; display: flex; border-radius: 8px; justify-content: center; align-items: center; color: white; border: none;">EXPORT</button>
+        </div>
+    </div>
+    <table id="parent-tb">
+        <tr class="table-list">
+            <th style="display: flex; margin-left: 1rem;">No.</th>
+            <th style="display: flex; margin-left: 20rem;">Name</th>
+            <th style="display: flex; margin-left: 40rem;">Phone Number</th>
+        </tr>
+    </table>
+
+    <script>
+        // username
+        const username = document.getElementById("username");
+        const input_name = document.getElementById("input_name");
+        function setUsername(){
+            console.log(input_name.value)
+            username.textContent = input_name.value;
+            input_name.value = "";       
+        };
+        // profile
+        const profile_img = document.getElementById("profile-pic")
+        const Url_img = document.getElementById("profile-url")
+        function setImg(){
+            profile_img.style.backgroundImage = "url(" + Url_img.value + ")"
+            Url_img.value = "";  
+            console.log("Hello")     
+        };
+        // phone number list
+        let count = 0;
+        var phonenumber = [];
+        const parent_table = document.getElementById("parent-tb");
+
+        function updateRow(){
+            count += 1;
+            const row = document.createElement("tr");
+            row.classList.add("table-info");
+
+            const cellNo = document.createElement("td");
+            cellNo.classList.add("td-order");
+            cellNo.textContent = count;
+
+            const cellName = document.createElement("td");
+            cellName.classList.add("td-name");
+            cellName.textContent = document.getElementById("name").value;
+
+            const cellTel = document.createElement("td");
+            cellTel.classList.add("td-phone");
+            cellTel.textContent = document.getElementById("phone").value;
+
+            row.appendChild(cellNo);
+            row.appendChild(cellName);
+            row.appendChild(cellTel);
+            parent_table.appendChild(row);
+
+            let arr = [];
+            arr.push(count);
+            arr.push(document.getElementById("name").value);
+            arr.push(document.getElementById("phone").value);
+            phonenumber.push(arr);
+
+            console.log(phonenumber);
+
+            document.getElementById("name").value = "";
+            document.getElementById("phone").value = "";
+        };
+
+        // Export CSV function
+        function saveCSV(){
+            const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", "data.csv");
+            link.style.visibility = "hidden";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    display: grid; position: relative; justify-content: center; justify-items: center;
+    grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr; 
+    width: 100vw; height: 100vh; 
+}
+.username{
+    margin-top: 2rem;
+    height: 5rem; align-items: center;
+    display: flex; position: relative; justify-content: center;
+    width: 100vw; padding: 0; font-weight: bold;
+}
+.profile{
+    display: grid; position: relative; justify-content: center;
+    width: 100vw; padding: 0;
+}
+.proflie-pic{
+    display: flex; position: relative;  background-image: url(https://scontent.xx.fbcdn.net/v/t1.15752-9/462546835_908480127840861_168503790124538003_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=C9r3T1611LYQ7kNvgFEit_c&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&_nc_gid=AKyoJWEZO6M0gdY51iuLVDV&oh=03_Q7cD1QHijJJRJT_KsseWPY_SiOZlg08du3c2atH8ku1d9lYUgw&oe=6738758F);
+    width: 183px; height: 183px; background-position: center; background-size: cover;
+    border-radius: 50%;
+} 
+.proflie-num{
+    display: flex; position: absolute;
+    background-color: red; color: white; font-size: 1rem; border-radius: 50%;
+    bottom: 0.5rem; right: 0.5rem;
+    width: 30px; height: 30px; justify-content: center; align-items: center;
+}
+.input-username{
+    display: grid; width: 100vw;  height: 10vh; justify-content: center;
+    grid-template-columns: 0fr 0fr 0fr; column-gap: 2rem;
+    align-items: center; align-content: center;
+}
+.input-urlimage{
+    display: grid; width: 100vw;  height: 10vh; justify-content: center;
+    grid-template-columns: 0fr 0fr 0fr; column-gap: 2rem;
+    align-items: center; align-content: center;
+    position: relative; top: -1rem;
+}
+.phone-numberlist{
+    display: grid; position: relative; grid-template-rows: 0fr 0fr; top: -1rem;
+    width: 100vw; justify-content: center; align-items: center;
+}
+.label-numberlist{
+    display: flex; width: 100vw; justify-content: center; font-size: 1.5rem;
+    align-items: center; align-content: center;
+    position: relative;
+}
+.input-numberlist{
+    display: grid; width: 100vw;  height: 10vh; justify-content: center;
+    grid-template-columns: 0fr 0fr 0fr 0fr; column-gap: 2rem;
+    align-items: center; align-content: center;
+    position: relative;
+}
+.table-list{
+    display: grid; grid-template-columns: 0fr 0fr 0fr; column-gap: 2rem; position: relative; width: 60rem; height: 3rem; 
+    background-color: rgb(214, 214, 214); justify-content: center; align-items: center;
+    border-bottom: solid 2px black; box-sizing: border-box; padding-left: 1rem;
+}
+th{
+    width: 8rem; position: absolute; color: black;
+}
+td{
+    width: 7rem; position: absolute; color: rgb(65, 63, 63);
+}
+.td-order{
+    display: flex; margin-left: 1rem;
+}
+.td-name{
+    display: flex; margin-left: 20rem;
+}
+.td-phone{
+    display: flex; margin-left: 40rem;
+}
+.table-info{
+    display: grid; grid-template-columns: 0fr 0fr 0fr; column-gap: 2rem; position: relative; width: 60rem; height: 3rem; 
+   justify-content: center; align-items: center;
+    border-bottom: solid 2px rgb(229, 229, 229); box-sizing: border-box; 
+}
+button{
+    background-color: royalblue;
+}
+button:hover{
+    background-color: aquamarine;
+}
+a{
+    color: black; text-decoration: none;
+}
+a:hover{
+    color: blue; text-decoration:underline;
+}
